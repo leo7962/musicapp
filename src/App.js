@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import firebase from './utils/Firebase';
+import 'firebase/firebase-auth';
+import Auth from './pages/Auth';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  firebase.auth().onAuthStateChanged(currentUser => {
+    if (!currentUser) {
+      setUser(null);
+    } else {
+      setUser(currentUser);
+    }
+    setIsLoading(false);
+  });
+
+  if (isLoading) {
+    return null;
+  }
+
+  return !user ? <Auth /> : <UserLogged />;
+}
+
+function UserLogged() {
+
+  const logout = () => {
+    firebase.auth().signOut();
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: '100vh' }}>
+      <h1>User Logged</h1>
+      <button onClick={logout}>Log out</button>
     </div>
   );
 }
