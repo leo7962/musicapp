@@ -11,10 +11,10 @@ export default function BasicModal(props) {
     }
 
     return (
-        <Modal open={show} onClose={onClose} className="basic-modal" size="tiny">
+        <Modal open={show} onClose={onClose} className='basic-modal' size='tiny'>
             <Modal.Header>
                 <h3>{title}</h3>
-                <Icon name="close" onClick={onClose}></Icon>
+                <Icon name='close' onClick={onClose}></Icon>
             </Modal.Header>
             <Modal.Content>{children}</Modal.Content>
         </Modal>

@@ -9,13 +9,13 @@ export default function routes(props) {
     const { user } = props;
     return (
         <Switch>
-            <Route path="/" exact>
+            <Route path='/' exact>
                 <Home />
             </Route>
             <Route>
                 <h1>Artists</h1>
             </Route>
-            <Route path="/settings" exact>
+            <Route path='/settings' exact>
                 <Settings user={user} />
             </Route>
         </Switch>

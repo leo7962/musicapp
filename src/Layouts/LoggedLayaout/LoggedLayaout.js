@@ -11,12 +11,12 @@ export default function LoggedLayaout(props) {
 
     return (
         <Router>
-            <Grid className="logged-layout">
+            <Grid className='logged-layout'>
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <MenuLeft user={user} />
                     </Grid.Column>
-                    <Grid.Column className="content" width={13}>
+                    <Grid.Column className='content' width={13}>
                         <TopBar user={user} />
                         <Routes user={user} />
                     </Grid.Column>

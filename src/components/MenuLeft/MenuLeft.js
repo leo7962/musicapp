@@ -30,13 +30,13 @@ function MenuLeft(props) {
 
     const handlerModal = (type) => {
         switch (type) {
-            case "artist":
-                setTitleModal("New Artist");
+            case 'artist':
+                setTitleModal('New Artist');
                 setContentModal(<h2>Formulario de nuevo artista</h2>)
                 setShowModal(true);
                 break;
-            case "song":
-                setTitleModal("New Song");
+            case 'song':
+                setTitleModal('New Song');
                 setContentModal(<h2>Formulario de nueva canción</h2>)
                 setShowModal(true);
                 break;
@@ -51,24 +51,24 @@ function MenuLeft(props) {
 
     return (
         <>
-            <Menu className="menu-left" vertical>
-                <div className="top">
-                    <Menu.Item as={Link} to="/" name="home" active={activeMenu === "/"} onClick={handlerMenu}>
-                        <Icon name="home" /> Home
+            <Menu className='menu-left' vertical>
+                <div className='top'>
+                    <Menu.Item as={Link} to='/' name='home' active={activeMenu === '/'} onClick={handlerMenu}>
+                        <Icon name='home' /> Home
                </Menu.Item>
-                    <Menu.Item as={Link} to="/artists" name="artists" active={activeMenu === "/artists"} onClick={handlerMenu}>
-                        <Icon name="music" /> Artists
+                    <Menu.Item as={Link} to='/artists' name='artists' active={activeMenu === '/artists'} onClick={handlerMenu}>
+                        <Icon name='music' /> Artists
                </Menu.Item>
                 </div>
 
                 {userAdmin && (
-                    <div className="footer">
+                    <div className='footer'>
 
-                        <Menu.Item onClick={() => handlerModal("artist")}>
-                            <Icon name="plus square outline" /> New Artist
+                        <Menu.Item onClick={() => handlerModal('artist')}>
+                            <Icon name='plus square outline' /> New Artist
                         </Menu.Item>
-                        <Menu.Item onClick={() => handlerModal("song")}>
-                            <Icon name="plus square outline" /> New Song
+                        <Menu.Item onClick={() => handlerModal('song')}>
+                            <Icon name='plus square outline' /> New Song
                         </Menu.Item>
                     </div>
                 )}

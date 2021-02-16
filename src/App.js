@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { ToastContainer } from "react-toastify";
-import firebase from "./utils/Firebase";
-import "firebase/auth";
-import Auth from "./pages/Auth";
+import React, { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import firebase from './utils/Firebase';
+import 'firebase/auth';
+import Auth from './pages/Auth';
 import LoggedLayaout from './Layouts/LoggedLayaout/LoggedLayaout';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
     <>
       {!user ? <Auth /> : <LoggedLayaout user = {user} />}
       <ToastContainer
-        position="top-center"
+        position='top-center'
         autoClose={5000}
         hideProgressBar
         newestOnTop

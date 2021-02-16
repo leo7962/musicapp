@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import UploadAvatar from "../../components/Settings/UploadAvatar";
-import "./Settings.scss";
+import UploadAvatar from '../../components/Settings/UploadAvatar';
+import './Settings.scss';
 
 export default function Settings(props) {
     const { user } = props;
@@ -8,9 +8,9 @@ export default function Settings(props) {
     console.log(props);
 
     return (
-        <div className="settings">
+        <div className='settings'>
             <h1>Hello Settings</h1>
-            <div className="avatar-name">
+            <div className='avatar-name'>
                 <UploadAvatar user={user}/>
                 <h2>User Name</h2>
             </div>

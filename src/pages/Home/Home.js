@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { map } from "lodash";
-// import BannerHome from "../../components/BannerHome";
-// import BasicSliderItems from "../../components/Sliders/BasicSliderItems";
-// import SongsSlider from "../../components/Sliders/SongsSlider";
-import firebase from "../../utils/Firebase";
-import "firebase/firestore";
+import React, { useState, useEffect } from 'react';
+import { map } from 'lodash';
+// import BannerHome from '../../components/BannerHome';
+// import BasicSliderItems from '../../components/Sliders/BasicSliderItems';
+// import SongsSlider from '../../components/Sliders/SongsSlider';
+import firebase from '../../utils/Firebase';
+import 'firebase/firestore';
 
-import "./Home.scss";
+import './Home.scss';
 
 const db = firebase.firestore(firebase);
 
@@ -17,7 +17,7 @@ export default function Home(props) {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    db.collection("artists")
+    db.collection('artists')
       .get()
       .then(response => {
         const arrayArtists = [];
@@ -31,7 +31,7 @@ export default function Home(props) {
   }, []);
 
   useEffect(() => {
-    db.collection("albums")
+    db.collection('albums')
       .get()
       .then(response => {
         const arrayAlbums = [];
@@ -45,7 +45,7 @@ export default function Home(props) {
   }, []);
 
   useEffect(() => {
-    db.collection("songs")
+    db.collection('songs')
       .limit(10)
       .get()
       .then(response => {
@@ -62,21 +62,21 @@ export default function Home(props) {
   return (
     <>
       {/* <BannerHome />
-      <div className="home">
+      <div className='home'>
         <BasicSliderItems
-          title="Últimos artistas"
+          title='Últimos artistas'
           data={artists}
-          folderImage="artist"
-          urlName="artist"
+          folderImage='artist'
+          urlName='artist'
         />
         <BasicSliderItems
-          title="Últimos álbumes"
+          title='Últimos álbumes'
           data={albums}
-          folderImage="album"
-          urlName="album"
+          folderImage='album'
+          urlName='album'
         />
         <SongsSlider
-          title="Ultimas canciónes"
+          title='Ultimas canciónes'
           data={songs}
           playerSong={playerSong}
         />

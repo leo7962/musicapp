@@ -53,7 +53,7 @@ export default function LoginForm(props) {
                     setUserActive(response.user.emailVerified);
                     if (!response.user.emailVerified) {
                         toast.warning(
-                            "To access first you need to verify your email"
+                            'To access first you need to verify your email'
                         );
                     }
                 })
@@ -67,44 +67,44 @@ export default function LoginForm(props) {
     }
 
     return (
-        <div className="login-form">
+        <div className='login-form'>
             <h1>¡Music for everyone around the world!</h1>
             <Form onSubmit={onSubmit} onChange={onChange}>
                 <Form.Field>
                     <Input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        icon="mail outline"
+                        type='text'
+                        name='email'
+                        placeholder='Email'
+                        icon='mail outline'
                         error={formError.email}
                     />
                     {formError.email && (
-                        <span className="error-text">
+                        <span className='error-text'>
                             please, introduce a valid Email
                         </span>
                     )}
                 </Form.Field>
                 <Form.Field>
                     <Input
-                        type={showPassword ? "text" : "password"}
-                        name="password"
-                        placeholder="Password"
+                        type={showPassword ? 'text' : 'password'}
+                        name='password'
+                        placeholder='Password'
                         error={formError.password}
                         icon={
                             showPassword ? (
-                                <Icon name="eye slash outline" link onClick={handlerShowPassword} />
+                                <Icon name='eye slash outline' link onClick={handlerShowPassword} />
                             ) : (
-                                    <Icon name="eye" link onClick={handlerShowPassword} />
+                                    <Icon name='eye' link onClick={handlerShowPassword} />
                                 )
                         }
                     />
                     {formError.password && (
-                        <span className="error-text">
+                        <span className='error-text'>
                             please, introduce a valid password and higher than 5 characters
                         </span>
                     )}
                 </Form.Field>
-                <Button type="submit" loading={isloading}>
+                <Button type='submit' loading={isloading}>
                     Log in
                 </Button>
             </Form>
@@ -117,11 +117,11 @@ export default function LoginForm(props) {
                 />
             )}
 
-            <div className="login-form__options">
+            <div className='login-form__options'>
                 <p onClick={() => setSelectedForm(null)}>Back</p>
                 <p>
-                    You don't have an Account?{" "}
-                    <span onClick={() => setSelectedForm("register")}>Sign up</span>
+                    You don't have an Account?{' '}
+                    <span onClick={() => setSelectedForm('register')}>Sign up</span>
                 </p>
             </div>
         </div>
@@ -133,7 +133,7 @@ function ButtonResetSendEmailVerification(props) {
 
     const resendVerificationEmail = () => {
         user.sendEmailVerification().then(() => {
-            toast.success("It has sended verification Email");
+            toast.success('It has sended verification Email');
         }).catch(err => {
             handlerErrors(err.code);
         }).finally(() => {
@@ -143,7 +143,7 @@ function ButtonResetSendEmailVerification(props) {
     }
 
     return (
-        <div className="resend-verification-email">
+        <div className='resend-verification-email'>
             <p>
                 If you haven't received the email from verification, you cand resend click <span onClick={resendVerificationEmail}>here</span>
             </p>
@@ -153,14 +153,14 @@ function ButtonResetSendEmailVerification(props) {
 
 function handlerErrors(code) {
     switch (code) {
-        case "auth/wrong-password":
-            toast.warning("The username or the password are wrong");
+        case 'auth/wrong-password':
+            toast.warning('The username or the password are wrong');
             break;
-        case "auth/too-many-request":
-            toast.warning("You have resended many times the verification email in a short time");
+        case 'auth/too-many-request':
+            toast.warning('You have resended many times the verification email in a short time');
             break;
-        case "auth/user-not-found":
-            toast.warning("The username or the password are wrong");
+        case 'auth/user-not-found':
+            toast.warning('The username or the password are wrong');
             break;
         default:
             break;
@@ -169,7 +169,7 @@ function handlerErrors(code) {
 
 function defaultValueForm() {
     return {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
     };
 }

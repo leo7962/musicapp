@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Icon, Form, Input } from 'semantic-ui-react';
 import { validateEmail } from '../../../utils/Validations';
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 import firebase from '../../../utils/Firebase';
 import 'firebase/auth';
 import './RegisterForm.scss';
@@ -54,7 +54,7 @@ export default function RegisterForm(props) {
                 changeUserName();
                 sendVerificationEmail();
             }).catch(() => {
-                toast.error("Error to create an Account");
+                toast.error('Error to create an Account');
             }).finally(() => {
                 setIsLoading(false);
                 setSelectedForm(null);
@@ -66,78 +66,78 @@ export default function RegisterForm(props) {
         firebase.auth().currentUser.updateProfile({
             displayName: formData.username
         }).catch(() => {
-            toast.error("Error to change the Username");
+            toast.error('Error to change the Username');
         });
     }
 
     const sendVerificationEmail = () => {
         firebase.auth().currentUser.sendEmailVerification().then(() => {
-            toast.success("Se ha enviado un email de verificaión");
+            toast.success('Se ha enviado un email de verificaión');
         }).catch(() => {
-            toast.error("Error to send the email of verification");
+            toast.error('Error to send the email of verification');
         });
     }
 
     return (
-        <div className="register-form">
+        <div className='register-form'>
             <h1>Start to listen with a new account of MusicApp </h1>
             <Form onSubmit={onSubmit} onChange={onChange}>
                 <Form.Field>
                     <Input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        icon="mail outline"
+                        type='text'
+                        name='email'
+                        placeholder='Email'
+                        icon='mail outline'
                         error={formError.email}
                     />
                     {formError.email && (
-                        <span className="error-text">
+                        <span className='error-text'>
                             please, introduce a valid email
                         </span>
                     )}
                 </Form.Field>
                 <Form.Field>
                     <Input
-                        type={showPassword ? "text" : "password"}
-                        name="password"
-                        placeholder="Password"
+                        type={showPassword ? 'text' : 'password'}
+                        name='password'
+                        placeholder='Password'
                         error={formError.password}
                         icon={
                             showPassword ? (
-                                <Icon name="eye slash outline" link onClick={handlerShowPassword} />
+                                <Icon name='eye slash outline' link onClick={handlerShowPassword} />
                             ) : (
-                                    <Icon name="eye" link onClick={handlerShowPassword} />
+                                    <Icon name='eye' link onClick={handlerShowPassword} />
                                 )
                         }
                     />
                     {formError.password && (
-                        <span className="error-text">
+                        <span className='error-text'>
                             please, introduce a valid password and higher than 5 characters
                         </span>
                     )}
                 </Form.Field>
                 <Form.Field>
                     <Input
-                        type="text"
-                        name="username"
-                        placeholder="New UserName"
-                        icon="user circle outline"
+                        type='text'
+                        name='username'
+                        placeholder='New UserName'
+                        icon='user circle outline'
                         error={formError.username}
                     />
                     {formError.username && (
-                        <span className="error-text">
+                        <span className='error-text'>
                             please, introduce a valid email
                         </span>
                     )}
                 </Form.Field>
-                <Button type="submit" loading={isloading}>Continue</Button>
+                <Button type='submit' loading={isloading}>Continue</Button>
             </Form>
 
-            <div className="register-form__options">
+            <div className='register-form__options'>
                 <p onClick={() => setSelectedForm(null)}>Back</p>
                 <p>
-                    Do you have an Account? {" "}
-                    <span onClick={() => setSelectedForm("login")}>Login</span>
+                    Do you have an Account? {' '}
+                    <span onClick={() => setSelectedForm('login')}>Login</span>
                 </p>
             </div>
         </div>
@@ -146,8 +146,8 @@ export default function RegisterForm(props) {
 
 function defaultValueForm() {
     return {
-        email: "",
-        password: "",
-        username: ""
+        email: '',
+        password: '',
+        username: ''
     };
 }

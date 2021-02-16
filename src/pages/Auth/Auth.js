@@ -12,9 +12,9 @@ export default function Auth() {
 
     const handleForm = () => {
         switch (selectedForm) {
-            case "login":
+            case 'login':
                 return <LoginForm setSelectedForm={setSelectedForm} />;
-            case "register":
+            case 'register':
                 return <RegisterForm setSelectedForm={setSelectedForm} />;
             default:
                 return <AuthOptions setSelectedForm={setSelectedForm} />;
@@ -22,11 +22,11 @@ export default function Auth() {
     };
 
     return (
-        <div className="auth" style={{ background: `url(${BackgroundAuth})` }}>
-            <div className="auth__dark" />
-            <div className="auth__box">
-                <div className="auth__box-logo">
-                    <img src={LogoNameWhite} alt="MusicApp" />
+        <div className='auth' style={{ background: `url(${BackgroundAuth})` }}>
+            <div className='auth__dark' />
+            <div className='auth__box'>
+                <div className='auth__box-logo'>
+                    <img src={LogoNameWhite} alt='MusicApp' />
                 </div>
                 {handleForm()}
             </div>
