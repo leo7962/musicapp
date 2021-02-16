@@ -59,28 +59,28 @@ export default function Home(props) {
       });
   }, []);
 
-//   return (
-//     // <>
-//     //   {/* <BannerHome /> */}
-//     //   <div className="home">
-//     //     <BasicSliderItems
-//     //       title="Últimos artistas"
-//     //       data={artists}
-//     //       folderImage="artist"
-//     //       urlName="artist"
-//     //     />
-//     //     <BasicSliderItems
-//     //       title="Últimos álbumes"
-//     //       data={albums}
-//     //       folderImage="album"
-//     //       urlName="album"
-//     //     />
-//     //     <SongsSlider
-//     //       title="Ultimas canciónes"
-//     //       data={songs}
-//     //       playerSong={playerSong}
-//     //     />
-//     //   </div>
-//     // </>
-//   );
+  return (
+    <>
+      {/* <BannerHome />
+      <div className="home">
+        <BasicSliderItems
+          title="Últimos artistas"
+          data={artists}
+          folderImage="artist"
+          urlName="artist"
+        />
+        <BasicSliderItems
+          title="Últimos álbumes"
+          data={albums}
+          folderImage="album"
+          urlName="album"
+        />
+        <SongsSlider
+          title="Ultimas canciónes"
+          data={songs}
+          playerSong={playerSong}
+        />
+      </div> */}
+    </>
+  );
 }
