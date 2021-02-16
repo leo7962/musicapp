@@ -9,10 +9,10 @@ import { useState } from 'react';
 
 export default function RegisterForm(props) {
     const { setSelectedForm } = props;
-    const [formData, setFormData] = useState(defaultValueForm());
     const [showPassword, setShowPassword] = useState(false);
+    const [formData, setFormData] = useState(defaultValueForm());    
     const [formError, setFormError] = useState({});
-    const [isloading, setIsLoading] = useState(false)
+    const [isloading, setIsLoading] = useState(false);
 
     const handlerShowPassword = () => {
         setShowPassword(!showPassword);
@@ -134,7 +134,7 @@ export default function RegisterForm(props) {
             </Form>
 
             <div className="register-form__options">
-                <p onClick={() => setSelectedForm(null)}>Come back</p>
+                <p onClick={() => setSelectedForm(null)}>Back</p>
                 <p>
                     Do you have an Account? {" "}
                     <span onClick={() => setSelectedForm("login")}>Login</span>
