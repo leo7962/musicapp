@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import firebase from "./utils/Firebase";
 import "firebase/auth";
 import Auth from "./pages/Auth";
+import LoggedLayaout from './Layouts/LoggedLayaout/LoggedLayaout';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <>
-      {!user ? <Auth /> : <UserLogged />}
+      {!user ? <Auth /> : <LoggedLayaout user = {user} />}
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -39,19 +40,6 @@ function App() {
       />
     </>
   )
-}
-
-function UserLogged() {
-
-  const logout = () => {
-    firebase.auth().signOut();
-  }
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: '100vh' }}>
-      <h1>User Logged</h1>
-      <button onClick={logout}>Log out</button>
-    </div>
-  );
 }
 
 export default App;
