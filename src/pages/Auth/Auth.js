@@ -15,7 +15,7 @@ export default function Auth() {
             case "login":
                 return <LoginForm />;
             case "register":
-                return <RegisterForm />;
+                return <RegisterForm setselectedForm={setselectedForm} />;
             default:
                 return <AuthOptions setselectedForm={setselectedForm} />;
         }
