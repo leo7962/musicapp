@@ -15,6 +15,10 @@ function MenuLeft(props) {
     const [contentModal, setContentModal] = useState(null);
 
     useEffect(() => {
+        setActiveMenu(location.pathname);
+    }, [location]);
+
+    useEffect(() => {
         isUserAdmin(user.uid).then(response => {
             setUserAdmin(response);
         });
@@ -61,10 +65,10 @@ function MenuLeft(props) {
                     <div className="footer">
 
                         <Menu.Item onClick={() => handlerModal("artist")}>
-                            <Icon name="plus square outline"/> New Artist 
+                            <Icon name="plus square outline" /> New Artist
                         </Menu.Item>
                         <Menu.Item onClick={() => handlerModal("song")}>
-                            <Icon name="plus square outline"/> New Song 
+                            <Icon name="plus square outline" /> New Song
                         </Menu.Item>
                     </div>
                 )}
