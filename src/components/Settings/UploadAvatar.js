@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import { Image } from 'semantic-ui-react';
-import { useDropzone } from 'react-dropzone';
-import { toast } from 'react-toastify';
-import NoAvatar from '../../assets/png/user.png';
-import firebase from '../../utils/Firebase';
-import 'firebase/storage';
-import 'firebase/auth';
+import React, { useState, useCallback } from "react";
+import { Image } from "semantic-ui-react";
+import { useDropzone } from "react-dropzone";
+import { toast } from "react-toastify";
+import NoAvatar from "../../assets/png/user.png";
+import firebase from "../../utils/Firebase";
+import "firebase/storage";
+import "firebase/auth";
 
 export default function UploadAvatar(props) {
   const { user, setReloadApp } = props;
@@ -20,7 +20,7 @@ export default function UploadAvatar(props) {
   });
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: 'image/jpeg, image/png',
+    accept: "image/jpeg, image/png",
     noKeyboard: true,
     onDrop
   });
@@ -43,12 +43,12 @@ export default function UploadAvatar(props) {
         setReloadApp(prevState => !prevState);
       })
       .catch(() => {
-        toast.error('Error to update the Avatar.');
+        toast.error("Error to update the Avatar.");
       });
   };
 
   return (
-    <div className='user-avatar' {...getRootProps()}>
+    <div className="user-avatar" {...getRootProps()}>
       <input {...getInputProps()} />
       {isDragActive ? (
         <Image src={NoAvatar} />

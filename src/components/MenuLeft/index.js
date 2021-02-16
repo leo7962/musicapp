@@ -1,1 +1,1 @@
-export { default } from './MenuLeft';
+export { default } from "./MenuLeft";
