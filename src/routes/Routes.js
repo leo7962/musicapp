@@ -1,21 +1,23 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 //Pages
 import Home from '../pages/Home/Home';
+import Settings from '../pages/Settings/Settings';
 
-export default function routes() {
+export default function routes(props) {
+    const { user } = props;
     return (
         <Switch>
             <Route path="/" exact>
-                <Home/>
+                <Home />
             </Route>
             <Route>
                 <h1>Artists</h1>
             </Route>
             <Route path="/settings" exact>
-                <h1>Settings</h1>
+                <Settings user={user} />
             </Route>
         </Switch>
-    )
+    );
 }
