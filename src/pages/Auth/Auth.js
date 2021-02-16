@@ -4,20 +4,20 @@ import RegisterForm from '../../components/Auth/RegisterForm';
 import LoginForm from '../../components/Auth/LoginForm';
 import BackgroundAuth from '../../assets/jpg/background-auth.jpg';
 import LogoNameWhite from '../../assets/png/logo-name-white.png';
-import './auth.scss';
+import './Auth.scss';
 
 export default function Auth() {
 
-    const [selectedForm, setselectedForm] = useState(null);
+    const [selectedForm, setSelectedForm] = useState(null);
 
     const handleForm = () => {
         switch (selectedForm) {
             case "login":
-                return <LoginForm />;
+                return <LoginForm setSelectedForm={setSelectedForm} />;
             case "register":
-                return <RegisterForm setselectedForm={setselectedForm} />;
+                return <RegisterForm setSelectedForm={setSelectedForm} />;
             default:
-                return <AuthOptions setselectedForm={setselectedForm} />;
+                return <AuthOptions setSelectedForm={setSelectedForm} />;
         }
     };
 

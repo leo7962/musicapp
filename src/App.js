@@ -21,22 +21,22 @@ function App() {
 
   if (isLoading) {
     return null;
-  }  
+  }
 
-  return(
+  return (
     <>
-    {!user ? <Auth /> : <UserLogged/>}
-    <ToastContainer
-    position="top-center"
-    autoClose = {5000}
-    hideProgressBar
-    newestOnTop
-    closeOnClick
-    rtl ={false}
-    pauseOnVisibilityChange
-    draggable
-    pauseOnHover = {false}
-    />
+      {!user ? <Auth /> : <UserLogged />}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover={false}
+      />
     </>
   )
 }

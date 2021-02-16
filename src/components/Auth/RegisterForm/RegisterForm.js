@@ -50,7 +50,7 @@ export default function RegisterForm(props) {
 
         if (formOk) {
             setIsLoading(true);
-            firebase.auth().createUserWithEmailAndPassword(formData.email, formData.password).then(() => {                
+            firebase.auth().createUserWithEmailAndPassword(formData.email, formData.password).then(() => {
                 changeUserName();
                 sendVerificationEmail();
             }).catch(() => {
@@ -137,7 +137,7 @@ export default function RegisterForm(props) {
                 <p onClick={() => setSelectedForm(null)}>Come back</p>
                 <p>
                     Do you have an Account? {" "}
-                    <span onClick={() => setSelectedForm("login")}>Sign up</span>
+                    <span onClick={() => setSelectedForm("login")}>Login</span>
                 </p>
             </div>
         </div>
