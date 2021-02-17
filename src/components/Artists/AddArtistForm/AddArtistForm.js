@@ -41,9 +41,9 @@ export default function AddArtistForm(props) {
 
   const onSubmit = () => {
     if (!formData.name) {
-      toast.warning("Añade el nombre del artista.");
+      toast.warning("Add the name of the artist.");
     } else if (!file) {
-      toast.warning("Añade la imagen del artista.");
+      toast.warning("Add the image of the artist.");
     } else {
       setIsLoading(true);
       const fileName = uuidv4();
@@ -52,18 +52,18 @@ export default function AddArtistForm(props) {
           db.collection("artists")
             .add({ name: formData.name, banner: fileName })
             .then(() => {
-              toast.success("Artista creado correctamente.");
+              toast.success("Artist created successfully .");
               resetForm();
               setIsLoading(false);
               setShowModal(false);
             })
             .catch(() => {
-              toast.error("Error al crear el artista.");
+              toast.error("Failed to create artist.");
               setIsLoading(false);
             });
         })
         .catch(() => {
-          toast.error("Error al subir la imagen.");
+          toast.error("Error uploading image.");
           setIsLoading(false);
         });
     }
