@@ -43,7 +43,7 @@ export default function UploadAvatar(props) {
         setReloadApp(prevState => !prevState);
       })
       .catch(() => {
-        toast.error("Error to update the Avatar.");
+        toast.error("Error to update the avatar.");
       });
   };
 
@@ -53,8 +53,8 @@ export default function UploadAvatar(props) {
       {isDragActive ? (
         <Image src={NoAvatar} />
       ) : (
-          <Image src={avatarUrl ? avatarUrl : NoAvatar} />
-        )}
+        <Image src={avatarUrl ? avatarUrl : NoAvatar} />
+      )}
     </div>
   );
 }

@@ -74,7 +74,7 @@ export default function LoginForm(props) {
           <Input
             type="text"
             name="email"
-            placeholder="Correo electrónico"
+            placeholder="Email"
             icon="mail outline"
             error={formError.email}
           />
@@ -88,7 +88,7 @@ export default function LoginForm(props) {
           <Input
             type={showPassword ? "text" : "password"}
             name="password"
-            placeholder="Contraseña"
+            placeholder="Password"
             error={formError.password}
             icon={
               showPassword ? (
