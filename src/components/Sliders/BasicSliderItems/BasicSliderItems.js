@@ -50,7 +50,7 @@ function RenderItem(props) {
       .getDownloadURL()
       .then(url => {
         setImageUrl(url);
-      });
+      }).catch(() => { });
   }, [item, folderImage]);
 
   return (

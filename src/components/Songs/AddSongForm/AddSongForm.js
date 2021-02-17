@@ -58,10 +58,10 @@ export default function AddSongForm(props) {
   const onSubmit = () => {
     if (!formData.name || !formData.album) {
       toast.warning(
-        "El nombre de la canción y el álbum al que pertence son obligatorios."
+        "The name of the song and the album it belongs to are required."
       );
     } else if (!file) {
-      toast.warning("La cación es obligatoria.");
+      toast.warning("The song is mandatory");
     } else {
       setIsLoading(true);
       const fileName = uuidv4();
@@ -74,18 +74,18 @@ export default function AddSongForm(props) {
               fileName: fileName
             })
             .then(() => {
-              toast.success("Canción subida correctamente.");
+              toast.success("Song uploaded successfully.");
               resetForm();
               setIsLoading(false);
               setShowModal(false);
             })
             .catch(() => {
-              toast.error("Error al subir la canción.");
+              toast.error("Error uploading song.");
               setIsLoading(false);
             });
         })
         .catch(() => {
-          toast.error("Error al subir la canción.");
+          toast.error("Song upload error.");
           setIsLoading(false);
         });
     }

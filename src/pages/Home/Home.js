@@ -64,19 +64,19 @@ export default function Home(props) {
       <BannerHome />
       <div className="home">
         <BasicSliderItems
-          title="Últimos artistas"
+          title="Latest artists"
           data={artists}
           folderImage="artist"
           urlName="artist"
         />
         <BasicSliderItems
-          title="Últimos álbumes"
+          title="Latest albums"
           data={albums}
           folderImage="album"
           urlName="album"
         />
         <SongsSlider
-          title="Ultimas canciónes"
+          title="Latest songs"
           data={songs}
           playerSong={playerSong}
         />
