@@ -57,7 +57,21 @@
     "wait-on": "^5.2.1"
   },
   "description": "Este es un proyecto realizado con Electron y React",
-  "repository": "https://github.com/leo7962/musicapp.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo7962/musicapp.git"
+  },
   "author": "Leonardo Fabián Hernández Peña <ingenieroleonardo@outlook.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/leo7962/musicapp/issues"
+  },
+  "homepage": "https://github.com/leo7962/musicapp#readme",
+  "keywords": [
+    "React",
+    "Electron.",
+    "Sass",
+    "cross-env",
+    "Firebase"
+  ]
 }
