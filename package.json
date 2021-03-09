@@ -6,7 +6,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.1",
+    "@testing-library/user-event": "^12.8.3",
     "electron-is-dev": "^2.0.0",
     "firebase": "^8.2.10",
     "lodash": "^4.17.21",
@@ -17,7 +17,7 @@
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-slick": "^0.28.0",
+    "react-slick": "^0.28.1",
     "react-toastify": "^7.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
